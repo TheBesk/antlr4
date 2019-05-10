@@ -1,0 +1,2 @@
+#!/bin/bash
+CLASSPATH="${ANTLR_HOME}/lib/antlr-4.7.1-complete.jar:." exec java -jar "${ANTLR_HOME}/lib/antlr-4.7.1-complete.jar" "$@"
