@@ -152,13 +152,12 @@ void MyListener::exitI_t_e(tinyrexxParser::I_t_eContext * ctx){
 }
 
 void MyListener::enterF_loop(tinyrexxParser::F_loopContext * ctx){
-  cout<<string(indent, ' ')<<"for";
-  indent-=4;
-  cout<<"(";
+  cout<<string(indent, ' ')<<"for(";
 }
 
 void MyListener::exitF_loop(tinyrexxParser::F_loopContext * ctx){
-  cout<<"}";
+  cout<<"}\n";
+  indent-=4;
 }
 
 void MyListener::enterF_test(tinyrexxParser::F_testContext * ctx){
@@ -172,9 +171,10 @@ void MyListener::exitF_test(tinyrexxParser::F_testContext * ctx){
 
 void MyListener::enterI_assign(tinyrexxParser::I_assignContext * ctx){
 string name = ctx->ID()->getText();
-    cout << string(indent, ' ') << name << " = " ;
+    cout << name << " = " ;
 }
 
 void MyListener::exitI_assign(tinyrexxParser::I_assignContext * ctx){
 cout << ";";
+indent+=4;
 }
