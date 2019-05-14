@@ -56,5 +56,10 @@ public:
   void enterI_e(tinyrexxParser::I_eContext * ctx);
   void exitI_e(tinyrexxParser::I_eContext * ctx);
 
+  void enterB_op(tinyrexxParser::B_opContext * ctx);
+  void exitB_op(tinyrexxParser::B_opContext * ctx);
+  
+  void enterF_expr(tinyrexxParser::F_exprContext * ctx);
+  void exitF_expr(tinyrexxParser::F_exprContext * ctx);
 };
 

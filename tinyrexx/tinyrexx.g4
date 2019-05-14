@@ -17,9 +17,10 @@ a_expr    : ID | NUMBER | '(' a_expr ')' | a_expr a_op a_expr | MINUS a_expr ;
 a_op      : MINUS | PLUS | MUL | DIV ;
 r_op      : EQUAL | LT | LEQ | GT | GEQ ;
 b_op      : b_op AND b_op | b_op OR b_op | NOT b_op | test;
-guardia   : test | a_expr;
+guardia   : test | f_expr | b_op;
 terminate : 'exit' a_expr;
 f_test    : a_expr;
+f_expr    : a_expr;
 
 
 

@@ -68,6 +68,9 @@ public:
   virtual void enterF_test(tinyrexxParser::F_testContext *ctx) = 0;
   virtual void exitF_test(tinyrexxParser::F_testContext *ctx) = 0;
 
+  virtual void enterF_expr(tinyrexxParser::F_exprContext *ctx) = 0;
+  virtual void exitF_expr(tinyrexxParser::F_exprContext *ctx) = 0;
+
 
 };
 

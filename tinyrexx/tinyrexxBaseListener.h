@@ -70,6 +70,9 @@ public:
   virtual void enterF_test(tinyrexxParser::F_testContext * /*ctx*/) override { }
   virtual void exitF_test(tinyrexxParser::F_testContext * /*ctx*/) override { }
 
+  virtual void enterF_expr(tinyrexxParser::F_exprContext * /*ctx*/) override { }
+  virtual void exitF_expr(tinyrexxParser::F_exprContext * /*ctx*/) override { }
+
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
   virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }

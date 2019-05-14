@@ -188,3 +188,27 @@ indent+=4;
 }
 
 void MyListener::exitI_e(tinyrexxParser::I_eContext * ctx){}
+
+void MyListener::enterB_op(tinyrexxParser::B_opContext * ctx){
+if(ctx->AND() != NULL) {
+        cout << " && ";
+    } else if(ctx->OR() != NULL) {
+        cout << " || ";
+    }
+}
+
+void MyListener::exitB_op(tinyrexxParser::B_opContext * ctx){
+if(ctx->AND() != NULL) {
+        cout << " && ";
+    } else if(ctx->OR() != NULL) {
+        cout << " || ";
+    }
+}
+
+void MyListener::enterF_expr(tinyrexxParser::F_exprContext * ctx){
+cout<<"(";
+}
+
+void MyListener::exitF_expr(tinyrexxParser::F_exprContext * ctx){
+cout<<") {\n";
+}

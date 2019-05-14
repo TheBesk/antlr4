@@ -23,7 +23,8 @@ public:
     RuleProgram = 0, RuleStatement = 1, RuleAssign = 2, RuleI_assign = 3, 
     RulePrint = 4, RuleInput = 5, RuleW_loop = 6, RuleF_loop = 7, RuleI_t_e = 8, 
     RuleI_e = 9, RuleTest = 10, RuleA_expr = 11, RuleA_op = 12, RuleR_op = 13, 
-    RuleB_op = 14, RuleGuardia = 15, RuleTerminate = 16, RuleF_test = 17
+    RuleB_op = 14, RuleGuardia = 15, RuleTerminate = 16, RuleF_test = 17, 
+    RuleF_expr = 18
   };
 
   tinyrexxParser(antlr4::TokenStream *input);
@@ -53,7 +54,8 @@ public:
   class B_opContext;
   class GuardiaContext;
   class TerminateContext;
-  class F_testContext; 
+  class F_testContext;
+  class F_exprContext; 
 
   class  ProgramContext : public antlr4::ParserRuleContext {
   public:
@@ -293,7 +295,8 @@ public:
     GuardiaContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     TestContext *test();
-    A_exprContext *a_expr();
+    F_exprContext *f_expr();
+    B_opContext *b_op();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -327,6 +330,19 @@ public:
   };
 
   F_testContext* f_test();
+
+  class  F_exprContext : public antlr4::ParserRuleContext {
+  public:
+    F_exprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    A_exprContext *a_expr();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  F_exprContext* f_expr();
 
 
   virtual bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
