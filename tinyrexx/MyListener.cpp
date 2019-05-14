@@ -159,7 +159,7 @@ void MyListener::exitF_loop(tinyrexxParser::F_loopContext * ctx){
   indent-=4;
   cout<<string(indent, ' ');
   cout<<"}\n";
-  indent-=4;
+  //indent-=4;
 }
 
 void MyListener::enterF_test(tinyrexxParser::F_testContext * ctx){
@@ -182,7 +182,9 @@ indent+=4;
 }
 
 void MyListener::enterI_e(tinyrexxParser::I_eContext * ctx){
-cout<<"} else {\n";
+indent-=4;
+cout<<string(indent, ' ')<<"} else {\n";
+indent+=4;
 }
 
 void MyListener::exitI_e(tinyrexxParser::I_eContext * ctx){}
