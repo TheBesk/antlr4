@@ -22,8 +22,8 @@ public:
   enum {
     RuleProgram = 0, RuleStatement = 1, RuleAssign = 2, RuleI_assign = 3, 
     RulePrint = 4, RuleInput = 5, RuleW_loop = 6, RuleF_loop = 7, RuleI_t_e = 8, 
-    RuleTest = 9, RuleA_expr = 10, RuleA_op = 11, RuleR_op = 12, RuleB_op = 13, 
-    RuleGuardia = 14, RuleTerminate = 15, RuleF_test = 16
+    RuleI_e = 9, RuleTest = 10, RuleA_expr = 11, RuleA_op = 12, RuleR_op = 13, 
+    RuleB_op = 14, RuleGuardia = 15, RuleTerminate = 16, RuleF_test = 17
   };
 
   tinyrexxParser(antlr4::TokenStream *input);
@@ -45,6 +45,7 @@ public:
   class W_loopContext;
   class F_loopContext;
   class I_t_eContext;
+  class I_eContext;
   class TestContext;
   class A_exprContext;
   class A_opContext;
@@ -180,6 +181,7 @@ public:
     GuardiaContext *guardia();
     std::vector<StatementContext *> statement();
     StatementContext* statement(size_t i);
+    I_eContext *i_e();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -187,6 +189,20 @@ public:
   };
 
   I_t_eContext* i_t_e();
+
+  class  I_eContext : public antlr4::ParserRuleContext {
+  public:
+    I_eContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<StatementContext *> statement();
+    StatementContext* statement(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+   
+  };
+
+  I_eContext* i_e();
 
   class  TestContext : public antlr4::ParserRuleContext {
   public:

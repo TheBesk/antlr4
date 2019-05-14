@@ -43,6 +43,9 @@ public:
   virtual void enterI_t_e(tinyrexxParser::I_t_eContext * /*ctx*/) override { }
   virtual void exitI_t_e(tinyrexxParser::I_t_eContext * /*ctx*/) override { }
 
+  virtual void enterI_e(tinyrexxParser::I_eContext * /*ctx*/) override { }
+  virtual void exitI_e(tinyrexxParser::I_eContext * /*ctx*/) override { }
+
   virtual void enterTest(tinyrexxParser::TestContext * /*ctx*/) override { }
   virtual void exitTest(tinyrexxParser::TestContext * /*ctx*/) override { }
 

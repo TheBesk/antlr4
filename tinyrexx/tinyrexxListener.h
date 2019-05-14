@@ -41,6 +41,9 @@ public:
   virtual void enterI_t_e(tinyrexxParser::I_t_eContext *ctx) = 0;
   virtual void exitI_t_e(tinyrexxParser::I_t_eContext *ctx) = 0;
 
+  virtual void enterI_e(tinyrexxParser::I_eContext *ctx) = 0;
+  virtual void exitI_e(tinyrexxParser::I_eContext *ctx) = 0;
+
   virtual void enterTest(tinyrexxParser::TestContext *ctx) = 0;
   virtual void exitTest(tinyrexxParser::TestContext *ctx) = 0;
 

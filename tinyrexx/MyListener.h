@@ -53,5 +53,8 @@ public:
   void enterI_assign(tinyrexxParser::I_assignContext * ctx);
   void exitI_assign(tinyrexxParser::I_assignContext * ctx);
 
+  void enterI_e(tinyrexxParser::I_eContext * ctx);
+  void exitI_e(tinyrexxParser::I_eContext * ctx);
+
 };
 
