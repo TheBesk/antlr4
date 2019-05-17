@@ -131,8 +131,9 @@ void MyListener::enterTest(tinyrexxParser::TestContext * ctx){
 
 void MyListener::exitTest(tinyrexxParser::TestContext * ctx){
     //cout << ") {" << endl;
-      cout << ")" ;
+    cout << ")" ;
 }
+
 
 void MyListener::enterTerminate(tinyrexxParser::TerminateContext * ctx){
   cout<<string(indent, ' ')<<"return ";
@@ -221,5 +222,5 @@ cout<<"(";
 }
 
 void MyListener::exitGuardia(tinyrexxParser::GuardiaContext* ctx){
-cout<<")"<<endl;
+cout<<") {"<<endl;
 }

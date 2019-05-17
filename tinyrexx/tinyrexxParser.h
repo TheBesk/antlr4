@@ -296,7 +296,6 @@ public:
     virtual size_t getRuleIndex() const override;
     TestContext *test();
     F_exprContext *f_expr();
-    B_opContext *b_op();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
