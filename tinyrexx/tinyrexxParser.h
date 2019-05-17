@@ -213,6 +213,9 @@ public:
     std::vector<A_exprContext *> a_expr();
     A_exprContext* a_expr(size_t i);
     R_opContext *r_op();
+    B_opContext *b_op();
+    std::vector<TestContext *> test();
+    TestContext* test(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -220,7 +223,7 @@ public:
   };
 
   TestContext* test();
-
+  TestContext* test(int precedence);
   class  A_exprContext : public antlr4::ParserRuleContext {
   public:
     A_exprContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -276,12 +279,9 @@ public:
   public:
     B_opContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *NOT();
-    std::vector<B_opContext *> b_op();
-    B_opContext* b_op(size_t i);
-    TestContext *test();
     antlr4::tree::TerminalNode *AND();
     antlr4::tree::TerminalNode *OR();
+    antlr4::tree::TerminalNode *NOT();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -289,7 +289,7 @@ public:
   };
 
   B_opContext* b_op();
-  B_opContext* b_op(int precedence);
+
   class  GuardiaContext : public antlr4::ParserRuleContext {
   public:
     GuardiaContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -346,8 +346,8 @@ public:
 
 
   virtual bool sempred(antlr4::RuleContext *_localctx, size_t ruleIndex, size_t predicateIndex) override;
+  bool testSempred(TestContext *_localctx, size_t predicateIndex);
   bool a_exprSempred(A_exprContext *_localctx, size_t predicateIndex);
-  bool b_opSempred(B_opContext *_localctx, size_t predicateIndex);
 
 private:
   static std::vector<antlr4::dfa::DFA> _decisionToDFA;

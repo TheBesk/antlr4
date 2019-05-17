@@ -61,5 +61,8 @@ public:
   
   void enterF_expr(tinyrexxParser::F_exprContext * ctx);
   void exitF_expr(tinyrexxParser::F_exprContext * ctx);
+
+  void enterGuardia(tinyrexxParser::GuardiaContext* ctx);
+  void exitGuardia(tinyrexxParser::GuardiaContext* ctx);
 };
 

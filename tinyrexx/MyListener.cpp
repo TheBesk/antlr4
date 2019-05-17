@@ -130,7 +130,8 @@ void MyListener::enterTest(tinyrexxParser::TestContext * ctx){
 }
 
 void MyListener::exitTest(tinyrexxParser::TestContext * ctx){
-    cout << ") {" << endl;
+    //cout << ") {" << endl;
+      cout << ")" ;
 }
 
 void MyListener::enterTerminate(tinyrexxParser::TerminateContext * ctx){
@@ -164,7 +165,6 @@ void MyListener::exitF_loop(tinyrexxParser::F_loopContext * ctx){
 
 void MyListener::enterF_test(tinyrexxParser::F_testContext * ctx){
   cout<<static_cast<tinyrexxParser::F_loopContext *>(ctx->parent)->i_assign()->ID()->getText()<<"<";
-
 }
 
 void MyListener::exitF_test(tinyrexxParser::F_testContext * ctx){
@@ -194,15 +194,18 @@ if(ctx->AND() != NULL) {
         cout << " && ";
     } else if(ctx->OR() != NULL) {
         cout << " || ";
+    } else if(ctx->NOT() !=NULL) {
+	cout<<" !";
     }
+	
 }
 
 void MyListener::exitB_op(tinyrexxParser::B_opContext * ctx){
-if(ctx->AND() != NULL) {
+/*if(ctx->AND() != NULL) {
         cout << " && ";
     } else if(ctx->OR() != NULL) {
         cout << " || ";
-    }
+    } */
 }
 
 void MyListener::enterF_expr(tinyrexxParser::F_exprContext * ctx){
@@ -211,4 +214,12 @@ cout<<"(";
 
 void MyListener::exitF_expr(tinyrexxParser::F_exprContext * ctx){
 cout<<") {\n";
+}
+
+void MyListener::enterGuardia(tinyrexxParser::GuardiaContext* ctx){
+cout<<"(";
+}
+
+void MyListener::exitGuardia(tinyrexxParser::GuardiaContext* ctx){
+cout<<")"<<endl;
 }
