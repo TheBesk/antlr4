@@ -169,7 +169,7 @@ void MyListener::enterF_test(tinyrexxParser::F_testContext * ctx){
 }
 
 void MyListener::exitF_test(tinyrexxParser::F_testContext * ctx){
-  cout << "; "<<static_cast<tinyrexxParser::F_loopContext *>(ctx->parent)->i_assign()->ID()->getText()<<"++;) {" << endl;
+  cout << "; "<<static_cast<tinyrexxParser::F_loopContext *>(ctx->parent)->i_assign()->ID()->getText()<<"++) {" << endl;
 }
 
 void MyListener::enterI_assign(tinyrexxParser::I_assignContext * ctx){
